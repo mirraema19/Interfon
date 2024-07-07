@@ -1,0 +1,22 @@
+/* card.css */
+
+.card-container {
+    display: flex; /* Establece un contenedor flexible */
+    justify-content: space-around; /* Distribuye el espacio entre las tarjetas */
+    align-items: center; /* Centra verticalmente las tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan si no caben en una sola fila */
+  }
+  
+  .card {
+    width: 200px; /* Ancho de cada tarjeta */
+    margin: 10px; /* Margen entre las tarjetas */
+    text-align: center;
+  }
+  
+  .card-image {
+    width: 100%; /* Hace que la imagen llene todo el ancho de la tarjeta */
+    height: auto; /* Ajusta automáticamente la altura de la imagen */
+  }
+  
+  /* Puedes agregar más estilos según sea necesario para el título y el botón */
+  

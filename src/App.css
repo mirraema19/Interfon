@@ -1,0 +1,117 @@
+/* NavBar*/
+.navbar {
+  position: relative; 
+  background-color: rgb(24, 22, 161);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 10px;
+}
+
+.navbar-logo {
+  width: 120px; 
+}
+
+.navbar-title {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem; 
+  color: white; 
+}
+
+.logout-icon {
+  color: white; 
+  cursor: pointer; 
+  border: 1px solid white; 
+  padding: 15px; 
+  border-radius: 5px; 
+}
+
+/* Contenido Pag 1*/
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px; 
+}
+
+.content-image {
+  width: 100%;
+  max-width: 300px; 
+  margin-bottom: 20px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.icon-link {
+  text-decoration: none;
+}
+
+.icon {
+  text-align: center;
+}
+
+.icon p {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .icon-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Responsivo */
+
+/* Media query para dispositivos con un ancho máximo de 768px */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column; 
+    align-items: flex-start;
+    padding: 10px 20px; 
+  }
+  
+  .logout-icon {
+    position: static; 
+    margin-top: 10px;
+  }
+
+  .icon-container {
+    flex-direction: column; 
+  }
+
+  .icon-container > div {
+    margin: 0.5rem 0;
+  }
+}
+
+
+.image-container {
+  border: 2px solid #ccc; 
+  padding: 10px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  height: 270px; 
+  width: 30%; 
+  margin: 0 auto; 
+  margin-bottom: 20px;
+ 
+}
+
+.content-image {
+  width: auto;
+  max-height: 100%; 
+  max-width: 100%; 
+  display: block; 
+ 
+}
+
+
+
