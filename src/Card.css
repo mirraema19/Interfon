@@ -1,22 +1,60 @@
-/* card.css */
-
 .card-container {
-    display: flex; /* Establece un contenedor flexible */
-    justify-content: space-around; /* Distribuye el espacio entre las tarjetas */
-    align-items: center; /* Centra verticalmente las tarjetas */
-    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan si no caben en una sola fila */
-  }
-  
-  .card {
-    width: 200px; /* Ancho de cada tarjeta */
-    margin: 10px; /* Margen entre las tarjetas */
-    text-align: center;
-  }
-  
-  .card-image {
-    width: 100%; /* Hace que la imagen llene todo el ancho de la tarjeta */
-    height: auto; /* Ajusta automáticamente la altura de la imagen */
-  }
-  
-  /* Puedes agregar más estilos según sea necesario para el título y el botón */
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #333;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+  width: 250px;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #118094;
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin: 15px 0;
+  color: #333;
+}
+
+.card-button {
+  background-color: #000000; /* Negro */
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 15px 0;
+  padding: 10px 20px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.card-button:hover {
+  background-color: #333333; /* Negro más claro */
+}
+
+.card-button:active {
+  transform: scale(0.95);
+}

@@ -1,11 +1,10 @@
-import React from 'react';
 import Card from './Card'; 
 import '../Card.css'; 
 
 const AdminDashboard = () => {
   return (
     <div>
-      <h2>Panel de Administrador</h2>
+      <h2 className="dashboard-title">Panel de Administrador</h2>
       <div className="card-container">
         <Card 
           imageUrl="imagen1.jpg" 

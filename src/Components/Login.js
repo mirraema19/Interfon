@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../Login.css'; 
+import '../Login.css';
+import '../App.css'; 
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
@@ -10,18 +10,15 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = async () => {
     try {
-      
       const userRole = await authenticateUserAndGetRole(username, password);
-      
-      
       onLogin(userRole);
       
       if (userRole === 'admin') {
         navigate('/admin');
       } else if (userRole === 'user') {
-        navigate('/contenido'); 
+        navigate('/contenido');
       } else {
-        
+        throw new Error('Rol de usuario no válido');
       }
     } catch (error) {
       console.error('Error de autenticación:', error.message);
@@ -29,7 +26,6 @@ const Login = ({ onLogin }) => {
   };
 
   const authenticateUserAndGetRole = async (username, password) => {
-  
     if (username === 'admin' && password === 'admin') {
       return 'admin';
     } else if (username === 'user' && password === 'user') {
