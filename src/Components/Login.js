@@ -10,7 +10,24 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = async () => {
     try {
-      const userRole = await authenticateUserAndGetRole(username, password);
+      const response = await fetch('http://localhost:3000/login', { // URL correcta
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ correo: username, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error en la autenticación');
+      }
+
+      const data = await response.json();
+      const userRole = data.rol;
+      const token = data.token;
+
+      // Guarda el token en el almacenamiento local o en el estado de la aplicación
+      localStorage.setItem('token', token);
       onLogin(userRole);
       
       if (userRole === 'admin') {
@@ -22,16 +39,6 @@ const Login = ({ onLogin }) => {
       }
     } catch (error) {
       console.error('Error de autenticación:', error.message);
-    }
-  };
-
-  const authenticateUserAndGetRole = async (username, password) => {
-    if (username === 'admin' && password === 'admin') {
-      return 'admin';
-    } else if (username === 'user' && password === 'user') {
-      return 'user';
-    } else {
-      throw new Error('Credenciales incorrectas');
     }
   };
 

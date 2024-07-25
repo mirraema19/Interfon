@@ -1,14 +1,12 @@
 import React from 'react';
-import '../Card.css'; // Asegúrate de importar el archivo CSS correcto
+import '../Card.css';
 
-const Card = ({ imageUrl, title, buttonText, onClick }) => {
+const Card = ({ imageUrl, title, buttonText, onDelete }) => {
   return (
     <div className="card">
       <img src={imageUrl} alt={title} />
-      <div className="card-title">{title}</div>
-      <button className="card-button" onClick={onClick}>
-        {buttonText}
-      </button>
+      <h3>{title}</h3>
+      <button onClick={onDelete}>{buttonText}</button>
     </div>
   );
 };
