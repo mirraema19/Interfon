@@ -24,6 +24,8 @@ function App() {
     setUserRole('');
   };
 
+  console.log(isLoggedIn)
+
   return (
     <Router>
       <div>
