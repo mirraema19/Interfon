@@ -1,12 +1,22 @@
 import React from 'react';
 import '../Card.css';
 
-const Card = ({ imageUrl, title, buttonText, onDelete }) => {
+const Card = ({ date, imageUrl, buttonText, onDelete }) => {
+  // Formatear la fecha
+  const formattedDate = new Date(date).toLocaleDateString('es-ES', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
   return (
     <div className="card">
-      <img src={imageUrl} alt={title} />
-      <h3>{title}</h3>
-      <button onClick={onDelete}>{buttonText}</button>
+      <img src={imageUrl} alt="Imagen" className="card-image" />
+      <div className="card-info">
+        <p className="card-date">{formattedDate}</p>
+        <button className="delete-button" onClick={onDelete}>{buttonText}</button>
+      </div>
     </div>
   );
 };
